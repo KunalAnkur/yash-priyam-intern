@@ -1,0 +1,60 @@
+.homepage-container {
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.listadd-btn {
+    padding: 5px;
+    border-radius: 5px;
+    backface-visibility: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.logout-btn {
+    padding: 5px;
+    border-radius: 5px;
+    backface-visibility: none;
+    background-color: rgb(212, 52, 52);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-left: 40px;
+}
+.listadd-btn:hover {
+    transform: scale(1.1);
+}
+
+.cardlist-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); */
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 2em;
+    justify-items: stretch;
+    grid-auto-rows: auto;
+}
+
+@media only screen and (max-width: 1750px) {
+   .cardlist-container {
+       grid-template-columns: repeat(4, 1fr);
+       
+   }
+}
+@media only screen and (max-width: 1420px) {
+    .cardlist-container {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    .cardlist-container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+@media only screen and (max-width: 700px) {
+    .cardlist-container {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
