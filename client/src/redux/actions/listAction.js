@@ -4,7 +4,7 @@ import { CREATE_CARD, CREATE_LIST, DELETE_CARD, DELETE_LIST, GET_LIST, LOADING_L
 export const createList = () => (dispatch) => {
   dispatch({ type: LOADING_LIST });
   axios
-    .post("http://localhost:8000/api/list")
+    .post("/api/list")
     .then((res) => {
       dispatch({ type: CREATE_LIST, payload: res.data });
     })
@@ -16,7 +16,7 @@ export const createList = () => (dispatch) => {
 export const getList = (userData) => (dispatch) => {
   dispatch({ type: LOADING_LIST });
   axios
-    .get("http://localhost:8000/api/list", userData)
+    .get("/api/list", userData)
     .then((res) => {
       dispatch({ type: GET_LIST, payload: res.data });
     })
@@ -29,7 +29,7 @@ export const deleteList = (listID) => (dispatch) => {
   dispatch({ type: LOADING_LIST }); 
   dispatch({ type: DELETE_LIST, payload: listID });
   axios
-    .delete(`http://localhost:8000/api/list/${listID}`)
+    .delete(`/api/list/${listID}`)
     .then((res) => {
         console.log(res)
      
@@ -42,7 +42,7 @@ export const deleteList = (listID) => (dispatch) => {
 export const updateList = (listInfo) => (dispatch) => {
   dispatch({ type: LOADING_LIST });
   axios
-    .put("http://localhost:8000/api/list", listInfo)
+    .put("/api/list", listInfo)
     .then((res) => {
       dispatch({ type: UPDATE_LIST, payload: res.data });
     })
@@ -54,7 +54,7 @@ export const updateList = (listInfo) => (dispatch) => {
 export const createCard = (userData) => (dispatch) => {
 //   console.log(userData);
     axios
-    .post("http://localhost:8000/api/card", userData)
+    .post("/api/card", userData)
     .then((res) => {
       dispatch({ type: CREATE_CARD, payload: res.data });
     })
@@ -65,7 +65,7 @@ export const createCard = (userData) => (dispatch) => {
 
 export const deleteCard = (listID,cardID) => (dispatch) => {
   axios
-    .delete(`http://localhost:8000/api/card/${listID}/${cardID}`)
+    .delete(`/api/card/${listID}/${cardID}`)
     .then((res) => {
       dispatch({ type: DELETE_CARD, payload: res.data });
     })
@@ -76,7 +76,7 @@ export const deleteCard = (listID,cardID) => (dispatch) => {
 
 export const updateCard = (cardInfo) => (dispatch) => {
   axios
-    .put("http://localhost:8000/api/card", cardInfo)
+    .put("/api/card", cardInfo)
     .then((res) => {
       dispatch({ type: UPDATE_CARD, payload: res.data });
     })

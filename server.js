@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const cors = require("cors");
 const path = require("path");
 const { login, signup, getUser } = require("./routes/userRoutes");
 const authRoute = require("./util/authRoute");
@@ -9,7 +8,6 @@ const {getList,createList,updateList,deleteList} = require("./routes/listRoute")
 const {createCard,updateCard,deleteCard} = require("./routes/cardRoute");
 const PORT = process.env.PORT || 8000;
 require("dotenv").config();
-app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "build")));
 

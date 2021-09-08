@@ -11,7 +11,7 @@ import {
 export const signupUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .post("http://localhost:8000/api/signup", userData)
+    .post("/api/signup", userData)
     .then((res) => {
       setAuthorizationHeader(res.data.idToken);
       dispatch({ type: SET_USER, payload: res.data });
@@ -26,7 +26,7 @@ export const signupUser = (userData, history) => (dispatch) => {
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .post("http://localhost:8000/api/login", userData)
+    .post("/api/login", userData)
     .then((res) => {
       setAuthorizationHeader(res.data.idToken);
       dispatch(getUserData());
@@ -41,7 +41,7 @@ export const loginUser = (userData, history) => (dispatch) => {
 export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_USER });
   axios
-    .get("http://localhost:8000/api/user")
+    .get("/api/user")
     .then((res) => {
       dispatch({ type: SET_USER, payload: res.data });
     })
