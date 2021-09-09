@@ -26,9 +26,10 @@ function TaskCard({ card, cardIdx, deleteCard, cardlistIdx, updateCard }) {
       // onDragStart={(e) => onDragStart(e, card)}
       draggable
     >
-      <button className="card-remove-btn" onClick={handleCardRemove}>
+    <div className="remove-card"><button className="card-remove-btn" onClick={handleCardRemove}>
         X
-      </button>
+      </button></div>
+      
       <br></br>
       <label>Title</label>
       <input
