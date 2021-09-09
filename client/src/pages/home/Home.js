@@ -5,6 +5,9 @@ import CardList from "../../components/CardList/CardList";
 import { useHistory } from 'react-router-dom';
 import { createList, getList, } from "../../redux/actions/listAction";
 import {logoutUser} from "../../redux/actions/userAction"
+import AddIcon from "@material-ui/icons/Add";
+import PermIdentityIcon from "@material-ui/icons/PermIdentity";
+import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 function Home({
   authenticated,
   loading,
@@ -29,13 +32,16 @@ function Home({
 
   return (
     <div className="homepage-container">
+      <div className="nav-btn">
       <button className="listadd-btn" onClick={handleListAdd}>
-        Add List
+        <AddIcon/>
       </button>
       <button className="logout-btn" onClick={() => logoutUser()}>
-        log Out
+        <PowerSettingsNewIcon/>
       </button>
-      <h3>User: {user}</h3>
+      </div>
+      
+      <h3><PermIdentityIcon/>: {user}</h3>
       <div className="cardlist-container">
         {lists.map((list) => (
           <CardList key={list._id} list={list} cardlistIdx={list._id} />

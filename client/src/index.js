@@ -6,6 +6,7 @@ import jwtDecode from "jwt-decode";
 import { SET_UNAUTHENTICATED } from "./redux/types";
 import store from "./redux/store";
 import axios from "axios";
+import "./index.css"
 import { logoutUser, getUserData } from "./redux/actions/userAction";
 const token = localStorage.idToken;
 if (token) {

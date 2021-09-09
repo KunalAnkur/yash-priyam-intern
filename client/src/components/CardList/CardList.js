@@ -54,7 +54,7 @@ function CardList({ list, deleteList, cardlistIdx, updateList, createCard }) {
         placeholder="card list name"
         value={currentListName}
       />
-      <button className="listadd-btn" onClick={handleListRemove}>
+      <button className="remove-btn" onClick={handleListRemove}>
         Remove List
       </button>
       <span className="card-number">{cardList.length}</span>
@@ -69,7 +69,7 @@ function CardList({ list, deleteList, cardlistIdx, updateList, createCard }) {
         ))}
       </div>
       <button className="card-add-btn" onClick={handleCardAdd}>
-        +
+        Add task
       </button>
     </div>
   );

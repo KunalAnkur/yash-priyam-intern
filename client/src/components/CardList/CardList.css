@@ -3,30 +3,88 @@
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    border: 2px solid black;
+    border-radius: 5px;
+    border: 2px solid rgb(91, 173, 43);
     max-width: 320px;
-    padding-top: 20px;
-    background-color: cornsilk;
+    /* padding-top: 20px; */
+    background-color: rgb(238, 255, 223);
+    padding: 20px;
 }
-
+.card-list>input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    padding: 0 0 20px 0;
+}
 .card-list-container {
     height: 70vh;
-    overflow: scroll;
-    width: 300px;
+    overflow-y: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+.card-list-container::-webkit-scrollbar {
+    width: 1em;
 }
 
+.card-list-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(120, 148, 115, 0.3);
+    border-radius: 10px;
+}
+
+.card-list-container::-webkit-scrollbar-thumb {
+    background-color: rgb(214, 221, 214);
+    border-radius: 10px;
+    /* outline: 1px solid rgb(130, 144, 112); */
+}
+.remove-btn{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: rgb(255, 208, 208);
+    border: 1px solid red;
+    color: red;
+    transition: 250ms;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 250ms;
+
+}
+.remove-btn:hover {
+    background: rgb(255, 220, 220);
+
+}
+.remove-btn:active {
+    transform: scale(0.98);
+
+}
+.listadd-btn.remove-btn:hover {
+    transform: scale(1);
+}
+.listadd-btn.remove-btn:active {
+    transform: scale(0.98);
+}
 .card-add-btn {
-    padding: 5px;
+    padding: 10px 5px 10px 5px;
     margin-top: 5px;
     border-radius: 5px;
     backface-visibility: none;
-    background-color: black;
+    background-color: rgb(1, 126, 1);
     color: white;
     cursor: pointer;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    transition: 250ms;
 }
 
 .card-add-btn:hover {
-    transform: scale(1.1);
+    background-color: rgb(27, 153, 27);
+}
+.card-add-btn:active {
+    transform: scale(0.98);
 }
 
 .card-list-name {
@@ -43,5 +101,7 @@
     text-align: center;
     background-color: pink;
     border-radius: 50%;
-    color: black;
+    color: red;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
