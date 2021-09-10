@@ -51,7 +51,7 @@ export const getUserData = () => (dispatch) => {
 };
 
 export const logoutUser = () => (dispatch) => {
-  localStorage.removeItem("mashDBToken");
+  localStorage.removeItem("idToken");
   delete axios.defaults.headers.common["Authorization"];
   dispatch({ type: SET_UNAUTHENTICATED });
 };
